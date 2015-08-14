@@ -24,7 +24,7 @@ class greeter_conf::install (
 
   # Configure it...
   file{ "${lightdm_config_filepath}":
-    source  => "puppet:///modules/greeter_conf/lightdm.conf",
+    content => template('greeter_conf/lightdm.conf.erb'),
   } ->
 
   # ...and make it the default greeter.
