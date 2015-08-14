@@ -8,10 +8,10 @@ class greeter_conf (
   $lightdm_config_filepath          = $greeter_conf::params::lightdm_config_filepath,
   $default_display_manager_filepath = $greeter_conf::params::default_display_manager_filepath,
   $config_dirs_script_filepath      = $greeter_conf::params::config_dirs_script_filepath,
-  $greeter_hide_users               = $greeter_conf::params::greeter_hide_users  
-  $allow_guest                      = $greeter_conf::params::allow_guest
-  $background_filepath              = $greeter_conf::params::background_filepath
-  $greeter_show_remote_login        = $greeter_conf::params::greeter_show_remote_login
+  $greeter_hide_users               = $greeter_conf::params::greeter_hide_users,  
+  $allow_guest                      = $greeter_conf::params::allow_guest,
+  $background_filepath              = $greeter_conf::params::background_filepath,
+  $greeter_show_remote_login        = $greeter_conf::params::greeter_show_remote_login,
 ) inherits greeter_conf::params {
 
   validate_re($ensure, '^(present|absent)$',"${ensure} is not allowed for the 'ensure' parameter. Allowed values are 'present' and 'absent'.")

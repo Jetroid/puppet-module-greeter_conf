@@ -19,11 +19,7 @@ class greeter_conf::install (
 
   # Make sure lightdm is installed
   package{ "${lightdm_package}":
-    if $ensure == 'present' {
-      ensure => latest,
-    } else {
       ensure => $ensure,
-    }
   } -> 
 
   # Configure it...
@@ -33,7 +29,7 @@ class greeter_conf::install (
 
   # ...and make it the default greeter.
   file{ "${default_display_manager_filepath}":
-    content => "${lightdm_file_dir},
+    content => "${lightdm_file_dir}",
   } ->
 
   # Now make sure that dconf/gconf/other nonsense will write to a build-specific directory
