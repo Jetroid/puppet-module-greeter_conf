@@ -20,7 +20,7 @@ class greeter_conf::install (
     mode    => "644",
   }
 
-  package{ "${greeter_package}":
+  package{ "${greeter_name}":
       ensure => $ensure,
   } ->
 
