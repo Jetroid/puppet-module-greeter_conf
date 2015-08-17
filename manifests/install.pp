@@ -36,7 +36,7 @@ class greeter_conf::install (
 
   # ...and make it the default greeter.
   file{ "${default_display_manager_filepath}":
-    content => "${lightdm_file_dir}",
+    content => "${lightdm_file_path}",
   } ->
 
   # Now make sure that dconf/gconf/other nonsense will write to a build-specific directory
