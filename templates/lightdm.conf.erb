@@ -1,8 +1,6 @@
 [SeatDefaults]
-greeter-session=unity-greeter
-#greeter-session=lightdm-gtk-greeter
-#greeter-session=lightdm-webkit-greeter
-user-session=ubuntu
+greeter-session=<%= scope.lookupvar('greeter_name') %>
+user-session=<%= scope.lookupvar('user_session') %>
 greeter-hide-users=<%= scope.lookupvar('greeter_hide_users') %>
 allow-guest=<%= scope.lookupvar('allow_guest') %>
 background=<%= scope.lookupvar('background_filepath') %>

@@ -4,6 +4,9 @@ class greeter_conf::install (
   $lightdm_config_filepath          = $greeter_conf::lightdm_config_filepath,
   $default_display_manager_filepath = $greeter_conf::default_display_manager_filepath,
   $config_dirs_script_filepath      = $greeter_conf::config_dirs_script_filepath,
+  $lightdm_file_path                = $greeter_conf::lightdm_file_path,
+  $greeter_name                     = $greeter_conf::greeter_name,
+  $user_session                     = $greeter_conf::user_session,
   $greeter_hide_users               = $greeter_conf::greeter_hide_users,
   $allow_guest                      = $greeter_conf::allow_guest,
   $background_filepath              = $greeter_conf::background_filepath,
@@ -17,10 +20,14 @@ class greeter_conf::install (
     mode    => "644",
   }
 
+  package{ "${greeter_package}":
+      ensure => $ensure,
+  } ->
+
   # Make sure lightdm is installed
   package{ "${lightdm_package}":
       ensure => $ensure,
-  } -> 
+  } ->
 
   # Configure it...
   file{ "${lightdm_config_filepath}":
