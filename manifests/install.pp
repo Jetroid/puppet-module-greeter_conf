@@ -11,6 +11,7 @@ class greeter_conf::install (
   $allow_guest                      = $greeter_conf::allow_guest,
   $background_filepath              = $greeter_conf::background_filepath,
   $greeter_show_remote_login        = $greeter_conf::greeter_show_remote_login,
+  $draw_grid                        = $greeter_conf::draw_grid,
 ) {
 
   File {
