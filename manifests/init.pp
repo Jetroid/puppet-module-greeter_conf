@@ -15,14 +15,12 @@ class greeter_conf (
   $allow_guest                      = $greeter_conf::params::allow_guest,
   $background_filepath              = $greeter_conf::params::background_filepath,
   $greeter_show_remote_login        = $greeter_conf::params::greeter_show_remote_login,
-  $draw_grid                        = $greeter_conf::params::draw_grid,
 ) inherits greeter_conf::params {
 
   validate_re($ensure, '^(present|absent)$',"${ensure} is not allowed for the 'ensure' parameter. Allowed values are 'present' and 'absent'.")
   validate_re($greeter_hide_users,'^(true|false)$',"${greeter_hide_users} is not allowed for the 'greeter_hide_users' parameter. Allowed values are 'true' and 'false'.")
   validate_re($allow_guest,'^(true|false)$',"${allow_guest} is not allowed for the 'allow_guest' parameter. Allowed values are 'true' and 'false'.")
   validate_re($greeter_show_remote_login,'^(true|false)$',"${greeter_show_remote_login} is not allowed for the 'greeter_show_remote_login' parameter. Allowed values are 'true' and 'false'.")
-  validate_re($draw_grid,'^(true|false)$',"${draw_grid} is not allowed for the 'draw_grid' parameter. Allowed values are 'true' and 'false'.")
 
   validate_string($lightdm_package,$lightdm_config_filepath, $default_display_manager_filepath,$config_dirs_script_filepath,$lightdm_file_path,$greeter_name,$user_session,$background_filepath)
 

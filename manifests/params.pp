@@ -14,5 +14,5 @@ class greeter_conf::params {
   $allow_guest                      = 'false'
   $background_filepath              = '/usr/share/backgrounds/warty-final-ubuntu.png'
   $greeter_show_remote_login        = 'false'
-  $draw_grid                        = 'false'
+
 }
