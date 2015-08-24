@@ -10,9 +10,9 @@ class greeter_conf::params {
 # lightdm.conf params.
   $greeter_name                     = 'unity-greeter'
   $user_session                     = 'ubuntu'
-  $greeter_hide_users               = 'true'
-  $allow_guest                      = 'false'
+  $greeter_hide_users               = true
+  $allow_guest                      = false
   $background_filepath              = '/usr/share/backgrounds/warty-final-ubuntu.png'
-  $greeter_show_remote_login        = 'false'
+  $greeter_show_remote_login        = false
 
 }
