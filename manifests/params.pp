@@ -7,8 +7,6 @@ class greeter_conf::params {
   $default_display_manager_filepath = '/etc/X11/default-display-manager'
   $config_dirs_script_filepath      = '/etc/profile.d/config-dirs.sh'
   $lightdm_file_path                = '/usr/sbin/lightdm'
-  $dvi_0_rotation                   = 'normal'
-  $dvi_1_rotation                   = 'normal'
 # lightdm.conf params.
   $greeter_name                     = 'unity-greeter'
   $user_session                     = 'ubuntu'

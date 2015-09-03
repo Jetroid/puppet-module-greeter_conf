@@ -5,8 +5,6 @@ class greeter_conf::install (
   $default_display_manager_filepath = $greeter_conf::default_display_manager_filepath,
   $config_dirs_script_filepath      = $greeter_conf::config_dirs_script_filepath,
   $lightdm_file_path                = $greeter_conf::lightdm_file_path,
-  $dvi_0_rotation                   = $greeter_conf::dvi_0_rotation,
-  $dvi_1_rotation                   = $greeter_conf::dvi_1_rotation,
   $greeter_name                     = $greeter_conf::greeter_name,
   $user_session                     = $greeter_conf::user_session,
   $greeter_hide_users               = $greeter_conf::greeter_hide_users,
@@ -24,7 +22,7 @@ class greeter_conf::install (
 
   package{ "${greeter_name}":
       ensure => $ensure,
-  }
+  } ->
 
   # Make sure lightdm is installed
   package{ "${lightdm_package}":
@@ -46,7 +44,4 @@ class greeter_conf::install (
     source  => "puppet:///modules/greeter_conf/configdirs.sh",
   }
 
-  file{ "/etc/lightdm/greeter_setup.sh":
-    content => template('greeter_conf/greeter_setup.sh.erb')
-  }
 }

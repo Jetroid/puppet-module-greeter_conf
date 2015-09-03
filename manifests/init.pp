@@ -9,8 +9,6 @@ class greeter_conf (
   $default_display_manager_filepath = $greeter_conf::params::default_display_manager_filepath,
   $config_dirs_script_filepath      = $greeter_conf::params::config_dirs_script_filepath,
   $lightdm_file_path                = $greeter_conf::params::lightdm_file_path,
-  $dvi_0_rotation                   = $greeter_conf::params::dvi_0_rotation,
-  $dvi_1_rotation                   = $greeter_conf::params::dvi_1_rotation,
   $greeter_name                     = $greeter_conf::params::greeter_name,
   $user_session                     = $greeter_conf::params::user_session,
   $greeter_hide_users               = $greeter_conf::params::greeter_hide_users,  
