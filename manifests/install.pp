@@ -46,7 +46,7 @@ class greeter_conf::install (
     source  => "puppet:///modules/greeter_conf/configdirs.sh",
   }
 
-  file{ "/etc/lightdm/rotate.sh":
+  file{ "/usr/share/rotate.sh":
     content => template('greeter_conf/rotate.sh.erb'),
     mode    => "700",
   }
